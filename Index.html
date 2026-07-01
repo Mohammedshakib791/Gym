@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Titan Fitness Gym</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#0b0b0b;color:#fff}
+nav{position:fixed;top:0;width:100%;padding:15px 30px;background:rgba(0,0,0,.7);backdrop-filter:blur(10px);z-index:100}
+nav h2{color:#ff3b3b}
+.hero{
+height:100vh;display:flex;align-items:center;justify-content:center;
+text-align:center;padding:20px;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.7)),
+url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1600&auto=format&fit=crop');
+background-size:cover;background-position:center;
+}
+.hero h1{font-size:4rem;animation:float 3s ease-in-out infinite}
+.hero p{max-width:700px;margin:20px auto}
+.btn{display:inline-block;padding:14px 28px;background:#ff3b3b;color:#fff;text-decoration:none;border-radius:30px}
+section{padding:80px 20px;max-width:1200px;margin:auto}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#171717;padding:25px;border-radius:16px;transform:perspective(800px) rotateX(0);transition:.4s}
+.card:hover{transform:perspective(800px) rotateX(8deg) translateY(-8px)}
+.gallery img{width:100%;border-radius:15px}
+.price{font-size:3rem;color:#ff3b3b}
+input,button{width:100%;padding:12px;margin:8px 0;border:none;border-radius:8px}
+button{background:#ff3b3b;color:#fff}
+footer{text-align:center;padding:30px;background:#111}
+@keyframes float{
+50%{transform:translateY(-10px)}
+}
+@media(max-width:768px){
+.hero h1{font-size:2.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav><h2>Titan Fitness</h2></nav>
+
+<section class="hero">
+<div>
+<h1>TRANSFORM YOUR BODY</h1>
+<p>Push your limits, build strength, and unlock your best self with professional fitness coaching.</p>
+<a href="#pricing" class="btn">Join Now</a>
+</div>
+</section>
+
+<section>
+<h2>Programs</h2><br>
+<div class="cards">
+<div class="card">Strength Training</div>
+<div class="card">Weight Loss Program</div>
+<div class="card">HIIT Workouts</div>
+<div class="card">Bodybuilding</div>
+<div class="card">Personal Training</div>
+<div class="card">Cardio Fitness</div>
+</div>
+</section>
+
+<section>
+<h2>Trainer</h2><br>
+<div class="card">
+<h3>Alex Kumar</h3>
+<p>Certified Fitness Coach with 8+ years of experience in transformation and strength training.</p>
+</div>
+</section>
+
+<section id="pricing">
+<h2>Pricing</h2><br>
+<div class="card">
+<div class="price">₹1499</div>
+<p>2 Months Membership</p>
+</div>
+</section>
+
+<section class="gallery">
+<h2>Gallery</h2><br>
+<img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=1200&auto=format&fit=crop" alt="Gym">
+</section>
+
+<section>
+<h2>Testimonials</h2><br>
+<div class="cards">
+<div class="card">"Lost 12kg in 4 months. Amazing trainers!" – Rahul</div>
+<div class="card">"Best gym environment and equipment." – Priya</div>
+<div class="card">"Highly recommend for beginners and athletes." – Arjun</div>
+</div>
+</section>
+
+<section>
+<h2>BMI Calculator</h2>
+<input type="number" id="weight" placeholder="Weight (kg)">
+<input type="number" id="height" placeholder="Height (cm)">
+<button onclick="bmi()">Calculate BMI</button>
+<p id="result"></p>
+</section>
+
+<section>
+<h2>Contact</h2>
+<form>
+<input placeholder="Your Name">
+<input placeholder="Phone Number">
+<input placeholder="Email">
+<button type="submit">Submit</button>
+</form>
+<p>Call: 6374277684</p>
+</section>
+
+<footer>
+Titan Fitness © 2026
+</footer>
+
+<script>
+function bmi(){
+let w=parseFloat(document.getElementById('weight').value);
+let h=parseFloat(document.getElementById('height').value)/100;
+if(!w||!h)return;
+let b=w/(h*h);
+document.getElementById('result').innerText="Your BMI: "+b.toFixed(1);
+}
+</script>
+
+</body>
+</html>
